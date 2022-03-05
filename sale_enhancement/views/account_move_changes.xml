@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="smart_account_move_inherit_viiew_form12" model="ir.ui.view">
+            <field name="name">account.move.form.view.inherit_viiew_move12</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="client_address_1"/>
+                    <field name="client_phone_1"/>
+                    <field name="driver_name_1"/>
+                    <field name="no_car_1"/>
+                    <field name="order_no_1"/>
+                    <field name="inv_no_1"/>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+
+                    <attribute name="context">{                                             'res_partner_search_mode': (context.get('default_move_type', 'entry') in ('out_invoice', 'out_refund', 'out_receipt') and 'customer') or (context.get('default_move_type', 'entry') in ('in_invoice', 'in_refund', 'in_receipt') and 'supplier') or False                                        , 'default_is_company': True,}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

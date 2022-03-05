@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<record id="inherit_purchase_order_form_view" model="ir.ui.view">
+<field name="name">purchase.order.inh.discount.form.view</field>
+<field name="model">purchase.order</field>
+<field name="inherit_id" ref="purchase.purchase_order_form"/>
+<field name="arch" type="xml">
+    <xpath expr="//page/field[@name='order_line']" position="after">
+        <group>
+            <field name="global_discount_type"  class="oe_inline" attrs="{'required': [('global_order_discount', '>', 0.0)], 'readonly' : [('state', 'not in', ['draft'])],'invisible': [('apply_global_discount', '=', False)]}"/>
+            <field name="global_order_discount" class="oe_inline" attrs="{'readonly' :[('state', 'not in', ['draft'])], 'invisible': [('apply_global_discount', '=', False)]}"/>
+        </group>
+    </xpath>
+    <field name="partner_ref" position="after">
+        <field name="apply_global_discount"/>
+    </field>
+    <xpath expr="//group[hasclass('oe_subtotal_footer')]/field[@name='amount_tax']" position="before">
+        <field name="total_discount" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+    </xpath>
+    <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+        <field name="is_global_line" invisible="1"/>
+         <field name="discount_type" />
+        <field name="discount"/>
+    </xpath>
+</field>
+</record>
+</data>
+</odoo>

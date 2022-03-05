@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="smart_landed_cost_lines_changes_inherit" model="ir.ui.view">
+            <field name="name">smart_landed_cost_lines_changes1</field>
+            <field name="model">stock.landed.cost</field>
+            <field name="inherit_id" ref="stock_landed_costs.view_stock_landed_cost_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page[@name='valuation_adjustments']/field[@name='valuation_adjustment_lines']/tree/field[@name='final_cost']" position="after">
+                    <field name="one_unit_cost"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

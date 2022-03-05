@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="smart_sale_order_inherit_form_view12" model="ir.ui.view">
+            <field name="name">sale.order.form.view.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="client_address_1"/>
+                    <field name="client_phone_1"/>
+                    <field name="driver_name_1"/>
+                    <field name="no_car_1"/>
+                    <field name="order_no_1"/>
+                    <field name="inv_no_1"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="context">{'res_partner_search_mode': 'customer'}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="smart_order_post_deliver_inv_pick" model="ir.ui.view">
+            <field name="name">sale.order.form.post_deliver_inv_pick</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_order']" position="after">
+                    <field name="post_deliver_inv_pick"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

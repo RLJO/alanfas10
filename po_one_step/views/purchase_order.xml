@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="smart_purchase_order_post_deliver_inv_pick" model="ir.ui.view">
+            <field name="name">purchase.order.form.post_deliver_inv_pick</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_order']" position="before">
+                    <field name="post_deliver_inv_pick"/>
+                </xpath>
+                <xpath expr="//button[@id='draft_confirm']" position="replace"/>
+                <xpath expr="//button[@id='bid_confirm']" position="replace"/>
+                <xpath expr="//button[10]" position="replace"/>
+                <xpath expr="//button[@name='button_approve']" position="after">
+                    <button name="button_confirms" type="object" states="draft,sent" string="Confirm PO"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

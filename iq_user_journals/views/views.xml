@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="iq_user_journals.list">
+      <field name="name">iq_user_journals list</field>
+      <field name="model">iq_user_journals.iq_user_journals</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="iq_user_journals.action_window">
+      <field name="name">iq_user_journals window</field>
+      <field name="res_model">iq_user_journals.iq_user_journals</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="iq_user_journals.action_server">
+      <field name="name">iq_user_journals server</field>
+      <field name="model_id" ref="model_iq_user_journals_iq_user_journals"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="iq_user_journals" id="iq_user_journals.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="iq_user_journals.menu_1" parent="iq_user_journals.menu_root"/>
+    <menuitem name="Menu 2" id="iq_user_journals.menu_2" parent="iq_user_journals.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="iq_user_journals.menu_1_list" parent="iq_user_journals.menu_1"
+              action="iq_user_journals.action_window"/>
+    <menuitem name="Server to list" id="iq_user_journals" parent="iq_user_journals.menu_2"
+              action="iq_user_journals.action_server"/>
+-->
+  </data>
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="smart_stock_picking_inherit_form_view12" model="ir.ui.view">
+            <field name="name">stock.picking.form.view.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="client_address_1"/>
+                    <field name="client_phone_1"/>
+                    <field name="driver_name_1"/>
+                    <field name="no_car_1"/>
+                    <field name="order_no_1"/>
+                    <field name="inv_no_1"/>
+                </xpath>
+                <xpath expr="//field[@name='date_deadline']" position="attributes">
+
+                    <attribute name="readonly">0</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_done']" position="attributes">
+
+                    <attribute name="readonly">0</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
