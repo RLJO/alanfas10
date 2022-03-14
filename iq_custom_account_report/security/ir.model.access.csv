@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_f_accounbt_moves_wizard,access.f.accounbt.moves.wizard,model_f_accounbt_moves_wizard,,1,1,1,0
+access_f_account_details_moves,access.f.account.details.moves,model_f_account_details_moves,,1,1,1,0

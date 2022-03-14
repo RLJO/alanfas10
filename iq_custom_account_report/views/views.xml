@@ -1,0 +1,53 @@
+<odoo>
+  <data>
+  
+        <record id="f_prod_accountingmovewizard_form_view" model="ir.ui.view">
+            <field name="name">f.accounbt.moves.wizard.form.view</field>
+            <field name="model">f.accounbt.moves.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="from_date"/>
+                         
+                        </group>
+                        <group>
+                            <field name="to_date"/>
+                         
+                        </group>
+                        
+                        </group>
+                     
+                   
+                    
+                
+                    
+                 
+                    <footer>
+                    	<button name="get_moves_accounts_details" type="object" string="View Report" class="oe_highlight"/>
+                    
+                        
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="f_maction_wizard_accountprodmoves_report" model="ir.actions.act_window">
+            <field name="name"> Accounting Details Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">f.accounbt.moves.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="f_maction_wizard_accountprodmoves_report" id="f_accountmenuvprodmove_wizard"
+                  name="Accounting Details Report" parent="account.menu_finance_reports"  sequence='400'/>
+             
+             
+            
+            
+            
+               
+  </data>
+</odoo>

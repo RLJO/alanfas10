@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+<record id="view_report_accountproductsmoves_tree" model="ir.ui.view">
+            <field name="name">f.account.details.moves.tree</field>
+            <field name="model">f.account.details.moves</field>
+            <field name="arch" type="xml">
+                <tree create ='false' import='false'>
+                  
+
+                  
+                     <field name="date"/>
+                      <field name="partner_id"/>
+                      <field name="ref"/>
+ 					  <field name="type"/>
+                      <field name="currency_id"/>
+                       <field name="inv_bill_amount" />
+					 <field name="vendor_pay" />
+					  <field name="customer_pay" />
+					   <field name="note" />
+                    
+                    
+                </tree>
+            </field>
+        </record>  
+    </data>
+</odoo>
